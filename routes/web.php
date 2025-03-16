@@ -12,7 +12,10 @@
 */
 
 use Illuminate\Support\Facades\Route;
-use Wave\Facades\Wave;
+use App\Http\Controllers\ServerStatusController;
 
 // Wave routes
 Wave::routes();
+
+// Server Status Route
+Route::get('/server-status', [ServerStatusController::class, 'index'])->name('server.status');
